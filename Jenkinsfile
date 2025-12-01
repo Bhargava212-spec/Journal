@@ -27,9 +27,9 @@ pipeline {
         stage('Build JAR') {
             steps {
                 script {
-                    echo "Building Spring Boot JAR..."
-                   bat 'mvn -Dmaven.test.failure.ignore=false clean package'
-
+                    dir('Journal') {
+                     bat 'mvn -Dmaven.test.failure.ignore=false clean package'
+                   }
                 }
             }
         }
