@@ -28,6 +28,7 @@ pipeline {
             steps {
                 script {
                     dir('Journal') {
+                     bat 'dir /s'
                      bat 'mvn -Dmaven.test.failure.ignore=false clean package'
                    }
                 }
